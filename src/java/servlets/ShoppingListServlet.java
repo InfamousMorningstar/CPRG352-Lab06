@@ -60,7 +60,7 @@ public class ShoppingListServlet extends HttpServlet {
         ArrayList<String> itemList = (ArrayList<String>) session.getAttribute("itemList");
         
         if (itemList == null) {
-            itemList = new ArrayList<String>();
+            itemList = new ArrayList<>();
         }
         if (action.equals("register")) {
             session.setAttribute("username", username);
