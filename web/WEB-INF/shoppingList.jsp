@@ -9,9 +9,31 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Shopping List</title>
     </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+    
+        <h1>Shopping List</h1>
+        <p>Hello, ${username} <a href="ShoppingList?action=logout"> logout</a></p>
+        
+        
+        <form action="" method="post">
+            <h2>Add Item</h2>
+            <input type="text" name="item">
+            <input type="hidden" name="action" value="add">
+            <input type="submit" value="Add item">
+        </form>
+        
+        <form ac tion="" method="post">
+            
+            <ul>
+                <c:forEach item="${itemList}" var="item">
+                    <li><input type="radio" name="item" value="${item}">${item}</li>
+                </c:forEach>
+            </ul>
+                <input type="hidden" nam="action" value="delete">
+                <input type="submit" value="Delete">
+                
+            
+        </form>
+    
 </html>
